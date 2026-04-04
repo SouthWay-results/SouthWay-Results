@@ -94,6 +94,9 @@ export default function Contact() {
                 </div>
               ) : (
                 <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
                   onSubmit={handleSubmit}
                   className="rounded-2xl p-8"
                   style={{ background: "#f8faff", border: "1px solid #e0eaff" }}
