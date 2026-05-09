@@ -3,14 +3,14 @@
  * Sections: Page Hero | Story | Mission | Values | CTA
  */
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowRight, Award, Heart, Zap } from "lucide-react";
 import AnimatedSection from "../components/AnimatedSection";
 
 const VALUES = [
-  { icon: <Zap size={24} />, title: "Results-First", desc: "Every decision we make is driven by one question: will this get our clients more leads and sales?" },
-  { icon: <Heart size={24} />, title: "Client-Centric", desc: "We treat every client's business as if it were our own. Your success is our success." },
-  { icon: <Award size={24} />, title: "Transparent", desc: "No hidden fees, no vanity metrics. We report on what actually matters — revenue and leads." },
+  { icon: <Zap size={24} />, title: "Results-Focused", desc: "Every strategy is designed to get your business more leads and sales without overpromising." },
+  { icon: <Heart size={24} />, title: "Personal Approach", desc: "You work directly with me. I treat your business as if it were my own." },
+  { icon: <Award size={24} />, title: "Transparent", desc: "No hidden fees or vanity metrics. We focus on what actually matters — real business growth." },
 ];
 
 export default function About() {
@@ -54,7 +54,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We're a London-based digital marketing agency on a mission to help local businesses compete and win online.
+            Dedicated digital marketing support for local businesses looking for real growth and personal attention.
           </motion.p>
         </div>
       </section>
@@ -66,8 +66,8 @@ export default function About() {
             <AnimatedSection>
               <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 60px rgba(30,144,255,0.15)" }}>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663513800441/agWqedNbfuZ7b2gsrVcK6B/team-about-Anerhod6a3UAVFmpFUEJGw.webp"
-                  alt="SouthWay Results founder working at a digital marketing dashboard in London office"
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+                  alt="A dedicated workspace showing focus and marketing planning"
                   className="w-full h-auto"
                 />
               </div>
@@ -78,23 +78,21 @@ export default function About() {
                 Who We Are
               </p>
               <h2 className="font-display font-800 text-3xl mb-6" style={{ color: "#0A1628" }}>
-                Built by Marketers, for Business Owners
+                A Personal Approach to Digital Marketing
               </h2>
               <div className="space-y-4 text-gray-600 font-body leading-relaxed">
                 <p>
                   SouthWay Results was founded with a single purpose: to give local service businesses the same
-                  competitive edge that big brands enjoy online. We saw too many great businesses struggling to get
-                  consistent leads while their competitors dominated social media.
+                  competitive edge that big brands enjoy online, but with the personal touch of a dedicated partner.
                 </p>
                 <p>
-                  Our founder brings years of hands-on experience running paid social campaigns for businesses across
-                  London — from plumbers and electricians to fitness studios and dental practices. We've spent
-                  thousands of hours testing what works and what doesn't, so you don't have to.
+                  We aren't a large, faceless agency. We're a highly effective one-man team, which means when you work with SouthWay Results, you work directly with me. This allows for a much more focused and agile approach to your marketing.
                 </p>
                 <p>
-                  Today, SouthWay Results is trusted by over 150 local businesses to manage their Facebook and
-                  Instagram advertising. Our average client sees a <strong style={{ color: "#1E90FF" }}>4.2x return on ad spend</strong> within the
-                  first 90 days.
+                  I've spent years testing and refining what works for local businesses in London — from plumbers and electricians to fitness studios and professional services. I handle everything from strategy to execution, ensuring your business gets the attention it deserves.
+                </p>
+                <p>
+                  My goal is to build long-term partnerships based on <strong style={{ color: "#1E90FF" }}>real results</strong> and clear communication. No overpromising, just dedicated work to help your business grow.
                 </p>
               </div>
             </AnimatedSection>
@@ -113,12 +111,12 @@ export default function About() {
               Our Mission
             </p>
             <h2 className="font-display font-800 text-3xl mb-6" style={{ color: "#0A1628" }}>
-              Democratising Digital Marketing for Local Businesses
+              Effective Marketing for Every Local Business
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed font-body">
-              We believe every local business deserves access to world-class digital marketing. Our mission is to
-              deliver enterprise-level ad strategies at a price point that makes sense for small and medium businesses
-              — with full transparency, no long-term contracts, and results you can measure.
+              We believe every local business deserves access to effective digital marketing. Our mission is to
+              deliver high-quality ad strategies that make sense for small and medium businesses
+              — with full transparency and a personal commitment to your success.
             </p>
           </AnimatedSection>
         </div>
@@ -132,7 +130,7 @@ export default function About() {
               Our Values
             </p>
             <h2 className="font-display font-800 text-3xl" style={{ color: "#0A1628" }}>
-              What Drives Everything We Do
+              What Drives Everything I Do
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -170,7 +168,7 @@ export default function About() {
               className="font-display font-800 text-white mb-4"
               style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)" }}
             >
-              Ready to Work with Us?
+              Ready to Grow Your Business?
             </h2>
             <p className="text-white/60 text-lg mb-8 max-w-lg mx-auto font-body">
               Let's build a marketing strategy that gets your business real results.
@@ -180,7 +178,7 @@ export default function About() {
                 className="btn-cta font-display font-700 text-base px-8 py-4 rounded-full text-white inline-flex items-center gap-2"
                 style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
               >
-                Get Started Today
+                Get in Touch
                 <ArrowRight size={18} />
               </button>
             </Link>

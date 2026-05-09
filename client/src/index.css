@@ -6,7 +6,7 @@
 /* ============================================================
    SOUTHWAY RESULTS — Design System
    Philosophy: Bold Agency / Data-Driven Precision
-   Palette: Deep Navy #0A1628 | Blue #1E90FF | White #FFFFFF | Gray #333333 | Amber #F59E0B
+   Palette: Deep Navy #0A1628 | Blue #1E90FF | White #FFFFFF | Gray #333333
    Typography: Montserrat (display) + Open Sans (body)
    ============================================================ */
 
@@ -170,19 +170,6 @@
     clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
     margin-top: -4rem;
     padding-top: 6rem;
-  }
-
-  /* Urgency banner */
-  .urgency-banner {
-    background: linear-gradient(90deg, #F59E0B, #F97316);
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0.5rem 1rem;
   }
 
   /* Nav link underline animation */

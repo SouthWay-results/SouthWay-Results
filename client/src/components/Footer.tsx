@@ -15,13 +15,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="font-display font-800 text-2xl mb-3">
-              South<span style={{ color: "#1E90FF" }}>Way</span>{" "}
-              <span style={{ color: "#F59E0B" }}>Results</span>
+            <div className="flex items-center gap-2 mb-3">
+              <img src="/favicon.ico" alt="SouthWay Results Logo" className="w-6 h-6" />
+              <div className="font-display font-800 text-2xl">
+                SouthWay <span style={{ color: "#1E90FF" }}>Results</span>
+              </div>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-6">
-              Helping local businesses in London grow with high-converting
-              Facebook & Instagram ad campaigns.
+              Dedicated digital marketing for local businesses in London.
             </p>
             <div className="flex gap-3">
               <a
@@ -163,7 +164,7 @@ export default function Footer() {
                   background: "linear-gradient(135deg, #1E90FF, #0066CC)",
                 }}
               >
-                Book Free Consultation
+                Get Started
               </button>
             </Link>
           </div>

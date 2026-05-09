@@ -60,7 +60,7 @@ const FEATURES = [
   {
     icon: <Facebook size={28} />,
     title: "Facebook Ads",
-    desc: "Reach your ideal customers and increase sales with optimised campaigns built for maximum ROI.",
+    desc: "Reach your ideal customers and increase sales with effective campaigns built for real growth.",
   },
   {
     icon: <Instagram size={28} />,
@@ -70,12 +70,12 @@ const FEATURES = [
   {
     icon: <Target size={28} />,
     title: "Lead Generation",
-    desc: "Turn visitors into real paying customers efficiently with proven funnel strategies.",
+    desc: "Turn visitors into real paying customers with proven, dedicated marketing strategies.",
   },
   {
     icon: <Users size={28} />,
     title: "Consultation",
-    desc: "Personalised marketing strategy tailored to your business goals and local market.",
+    desc: "Personalised marketing strategy tailored to your specific business goals and local market.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function Home() {
                   className="inline-block font-display font-700 text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6"
                   style={{ background: "rgba(30,144,255,0.15)", color: "#1E90FF", border: "1px solid rgba(30,144,255,0.3)" }}
                 >
-                  #1 Digital Marketing Agency in London
+                  Dedicated Digital Marketing for Local Businesses
                 </span>
               </motion.div>
 
@@ -126,7 +126,7 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               >
                 Grow Your Business with{" "}
-                <span style={{ color: "#1E90FF" }}>High-Converting</span> Ads
+                <span style={{ color: "#1E90FF" }}>Effective</span> Ads
               </motion.h1>
 
               <motion.p
@@ -135,8 +135,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
-                We help local businesses get more leads and sales using Facebook &
-                Instagram marketing. Real results. No fluff.
+                We help local businesses get more leads and sales using focused Facebook &
+                Instagram marketing. No fluff, just dedicated work.
               </motion.p>
 
               <motion.div
@@ -150,7 +150,7 @@ export default function Home() {
                     className="btn-cta font-display font-700 text-base px-7 py-3.5 rounded-full text-white flex items-center gap-2"
                     style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
                   >
-                    Book Your Free Consultation
+                    Get Started
                     <ArrowRight size={18} />
                   </button>
                 </Link>
@@ -171,7 +171,7 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
               >
-                {["No long-term contracts", "Free strategy call", "Results in 30 days"].map((t) => (
+                {["No long-term contracts", "Personal strategy call", "Dedicated focus"].map((t) => (
                   <div key={t} className="flex items-center gap-2 text-sm text-white/60">
                     <CheckCircle size={15} style={{ color: "#1E90FF" }} />
                     {t}
@@ -180,7 +180,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Right: Dashboard image */}
+            {/* Right: Image */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 60, scale: 0.95 }}
@@ -192,8 +192,8 @@ export default function Home() {
                 style={{ boxShadow: "0 20px 80px rgba(30,144,255,0.25)" }}
               >
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663513800441/agWqedNbfuZ7b2gsrVcK6B/hero-dashboard-YFkPyUXcHDvZJMMqUF67QJ.webp"
-                  alt="Facebook and Instagram marketing analytics dashboard showing ROAS 4.2x, 312 leads, 5.8% CTR"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+                  alt="Marketing data and growth charts"
                   className="w-full h-auto"
                 />
               </div>
@@ -208,21 +208,8 @@ export default function Home() {
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="font-display font-700 text-lg" style={{ color: "#1E90FF" }}>4.2x</div>
-                <div className="text-xs text-white/60">Average ROAS</div>
-              </motion.div>
-              <motion.div
-                className="absolute -top-4 -right-4 rounded-xl px-4 py-3 text-white"
-                style={{
-                  background: "rgba(10,22,40,0.95)",
-                  border: "1px solid rgba(245,158,11,0.3)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-                }}
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              >
-                <div className="font-display font-700 text-lg" style={{ color: "#F59E0B" }}>312+</div>
-                <div className="text-xs text-white/60">Leads / Month</div>
+                <div className="font-display font-700 text-lg" style={{ color: "#1E90FF" }}>Dedicated</div>
+                <div className="text-xs text-white/60">One-on-One Support</div>
               </motion.div>
             </motion.div>
           </div>
@@ -236,17 +223,17 @@ export default function Home() {
         <div className="container">
           <AnimatedSection className="text-center mb-12">
             <p className="font-display font-600 text-sm uppercase tracking-widest mb-2" style={{ color: "#1E90FF" }}>
-              Trusted by local businesses in London
+              Focusing on your growth
             </p>
             <h2 className="font-display font-800 text-white text-3xl">
-              Numbers That Speak for Themselves
+              Results-Driven Marketing
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <MetricCard value={150} suffix="+" label="Clients Served" delay={0} />
-            <MetricCard value={4} suffix=".2x" label="Average ROAS" delay={0.1} />
-            <MetricCard value={5000} suffix="+" label="Leads Generated" delay={0.2} />
-            <MetricCard value={98} suffix="%" label="Client Satisfaction" delay={0.3} />
+            <MetricCard value={50} suffix="+" label="Successful Campaigns" delay={0} />
+            <MetricCard value={4} suffix="x" label="Average ROI" delay={0.1} />
+            <MetricCard value={1000} suffix="+" label="Leads Generated" delay={0.2} />
+            <MetricCard value={100} suffix="%" label="Dedicated Effort" delay={0.3} />
           </div>
         </div>
       </section>
@@ -256,13 +243,13 @@ export default function Home() {
         <div className="container">
           <AnimatedSection className="text-center mb-16">
             <p className="font-display font-600 text-sm uppercase tracking-widest mb-2" style={{ color: "#1E90FF" }}>
-              What We Do
+              Our Approach
             </p>
             <h2 className="font-display font-800 text-3xl mb-4" style={{ color: "#0A1628" }}>
-              Everything You Need to Scale
+              Everything You Need to Grow
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto font-body">
-              From ad creation to lead nurturing, we handle the full funnel so you can focus on running your business.
+              From ad creation to lead nurturing, we handle the strategy so you can focus on running your business.
             </p>
           </AnimatedSection>
 
@@ -270,8 +257,7 @@ export default function Home() {
             {FEATURES.map((f, i) => (
               <AnimatedSection key={f.title} delay={i * 0.1}>
                 <div
-                  className="card-glow rounded-2xl p-7 h-full"
-                  style={{ background: "#f8faff", border: "1px solid #e8f0ff" }}
+                  className="card-glow rounded-2xl p-8 bg-[#f8faff] border border-[#e0eaff]"
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
@@ -298,10 +284,10 @@ export default function Home() {
         <div className="container">
           <AnimatedSection className="text-center mb-12">
             <p className="font-display font-600 text-sm uppercase tracking-widest mb-2" style={{ color: "#1E90FF" }}>
-              Trusted Partners
+              Local Expertise
             </p>
             <h2 className="font-display font-800 text-2xl" style={{ color: "#0A1628" }}>
-              Trusted by Local Businesses Across London
+              Helping Local Businesses Across London
             </h2>
           </AnimatedSection>
 
@@ -337,9 +323,9 @@ export default function Home() {
           <AnimatedSection>
             <span
               className="inline-block font-display font-700 text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6"
-              style={{ background: "rgba(245,158,11,0.15)", color: "#F59E0B", border: "1px solid rgba(245,158,11,0.3)" }}
+              style={{ background: "rgba(30,144,255,0.15)", color: "#1E90FF", border: "1px solid rgba(30,144,255,0.3)" }}
             >
-              ⚡ Limited Spots Available
+              Personalized Marketing Support
             </span>
             <h2
               className="font-display font-800 text-white mb-4"
@@ -348,18 +334,18 @@ export default function Home() {
               Ready to Get More Leads & Sales?
             </h2>
             <p className="text-white/60 text-lg mb-8 max-w-lg mx-auto font-body">
-              Book your free 30-minute strategy call today. We'll show you exactly how we'd grow your business.
+              Let's discuss how we can grow your business with a dedicated marketing approach.
             </p>
             <Link href="/contact">
               <button
                 className="btn-cta font-display font-700 text-base px-8 py-4 rounded-full text-white inline-flex items-center gap-2"
                 style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
               >
-                Claim Your Free Strategy Session
+                Get Started
                 <ArrowRight size={18} />
               </button>
             </Link>
-            <p className="text-white/30 text-xs mt-4 font-body">No commitment required. 100% free.</p>
+            <p className="text-white/30 text-xs mt-4 font-body">Dedicated support. No commitment required.</p>
           </AnimatedSection>
         </div>
       </section>

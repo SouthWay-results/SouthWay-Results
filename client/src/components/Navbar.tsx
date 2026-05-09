@@ -44,21 +44,25 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.4)" : "none",
       }}
     >
-      {/* Urgency banner */}
-      <div className="urgency-banner">
-        ⚡ Limited spots available — Book your free consultation today!
+      {/* Top Banner */}
+      <div 
+        className="text-white font-display font-700 text-[10px] sm:text-xs uppercase tracking-widest text-center py-2 px-4"
+        style={{ background: "linear-gradient(90deg, #1E90FF, #0066CC)" }}
+      >
+        Effective Marketing for Local Businesses — Book Your Free Consultation
       </div>
 
       <nav className="container flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/">
-          <span
-            className="font-display font-900 text-xl tracking-tight"
-            style={{ color: "#fff" }}
-          >
-            South<span style={{ color: "#1E90FF" }}>Way</span>{" "}
-            <span style={{ color: "#F59E0B" }}>Results</span>
-          </span>
+          <div className="flex items-center gap-2 cursor-pointer">
+            <img src="/favicon.ico" alt="SouthWay Results Logo" className="w-8 h-8" />
+            <span
+              className="font-display font-900 text-xl tracking-tight text-white"
+            >
+              SouthWay <span style={{ color: "#1E90FF" }}>Results</span>
+            </span>
+          </div>
         </Link>
 
         {/* Desktop links */}
@@ -85,7 +89,7 @@ export default function Navbar() {
               letterSpacing: "0.03em",
             }}
           >
-            Book Free Consultation
+            Get Started
           </button>
         </Link>
 
@@ -133,7 +137,7 @@ export default function Navbar() {
                       background: "linear-gradient(135deg, #1E90FF, #0066CC)",
                     }}
                   >
-                    Book Free Consultation
+                    Get Started
                   </button>
                 </Link>
               </li>

@@ -15,29 +15,29 @@ const CASE_STUDIES = [
     problem:
       "A local plumbing business was relying entirely on word-of-mouth referrals. They had zero online presence and were losing jobs to competitors who appeared first in social media feeds.",
     solution:
-      "We launched a targeted Facebook Ads campaign focused on homeowners within a 10-mile radius. We created urgency-driven creatives highlighting same-day service and competitive pricing, paired with a streamlined lead capture form.",
-    result: "312 qualified leads in 60 days at £4.20 cost per lead. Monthly revenue increased by 68%.",
+      "We launched a targeted Facebook Ads campaign focused on homeowners within a 10-mile radius. We created focused creatives highlighting same-day service and competitive pricing, paired with a streamlined lead capture form.",
+    result: "Consistent qualified leads generated monthly. Monthly revenue increased significantly.",
     metrics: [
-      { label: "Leads Generated", value: "312" },
+      { label: "Leads Generated", value: "300+" },
       { label: "Cost Per Lead", value: "£4.20" },
       { label: "Revenue Increase", value: "+68%" },
-      { label: "ROAS", value: "5.1x" },
+      { label: "ROI", value: "5.1x" },
     ],
   },
   {
     client: "Capital Fitness Studio",
     industry: "Health & Fitness",
-    color: "#F59E0B",
+    color: "#0066CC",
     problem:
-      "A boutique fitness studio in South London was struggling to fill classes after the pandemic. Their Instagram account had followers but zero conversions to paid memberships.",
+      "A boutique fitness studio in South London was struggling to fill classes. Their Instagram account had followers but zero conversions to paid memberships.",
     solution:
-      "We redesigned their Instagram ad strategy with before/after transformation content and a limited-time free trial offer. We retargeted website visitors and Instagram engagers with a compelling membership deal.",
-    result: "87 new members signed up in 30 days. Instagram engagement tripled. Cost per acquisition dropped to £18.",
+      "We redesigned their Instagram ad strategy with transformation content and a trial offer. We retargeted engagers with a compelling membership deal.",
+    result: "Steady stream of new members monthly. Instagram engagement tripled.",
     metrics: [
-      { label: "New Members", value: "87" },
+      { label: "New Members", value: "80+" },
       { label: "Cost Per Acquisition", value: "£18" },
       { label: "Engagement Increase", value: "3x" },
-      { label: "ROAS", value: "4.8x" },
+      { label: "ROI", value: "4.8x" },
     ],
   },
   {
@@ -45,15 +45,15 @@ const CASE_STUDIES = [
     industry: "Cleaning Services",
     color: "#10B981",
     problem:
-      "A commercial and residential cleaning company had a great service but couldn't break through in a crowded London market. Their previous agency delivered clicks but no actual bookings.",
+      "A commercial and residential cleaning company had a great service but couldn't break through in a crowded London market.",
     solution:
-      "We built a full lead generation funnel — Facebook and Instagram ads driving to a dedicated landing page with a free quote form. We implemented follow-up email sequences and retargeting to maximise conversion.",
-    result: "Over 200 new booking enquiries in 45 days. Booking rate increased from 12% to 34%.",
+      "We built a full lead generation funnel — Facebook and Instagram ads driving to a dedicated landing page with a quote form.",
+    result: "Over 200 new booking enquiries generated. Booking rate increased significantly.",
     metrics: [
       { label: "Booking Enquiries", value: "200+" },
       { label: "Booking Rate", value: "34%" },
       { label: "Cost Per Lead", value: "£6.80" },
-      { label: "ROAS", value: "3.9x" },
+      { label: "ROI", value: "3.9x" },
     ],
   },
 ];
@@ -69,7 +69,7 @@ export default function Results() {
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663513800441/agWqedNbfuZ7b2gsrVcK6B/results-hero-WCDachZ8JcUCR5HA9qWnSa.webp)`,
+            backgroundImage: `url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -103,7 +103,7 @@ export default function Results() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Don't take our word for it — see exactly how we've helped local businesses across London generate more leads and revenue.
+            See exactly how we've helped local businesses across London generate more leads and revenue through dedicated marketing.
           </motion.p>
         </div>
       </section>
@@ -113,10 +113,10 @@ export default function Results() {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: <Users size={20} />, value: "5,000+", label: "Total Leads Generated" },
-              { icon: <TrendingUp size={20} />, value: "4.2x", label: "Average ROAS" },
-              { icon: <DollarSign size={20} />, value: "£2M+", label: "Revenue Generated" },
-              { icon: <Users size={20} />, value: "150+", label: "Businesses Helped" },
+              { icon: <Users size={20} />, value: "1,000+", label: "Total Leads Generated" },
+              { icon: <TrendingUp size={20} />, value: "4x", label: "Average ROI" },
+              { icon: <DollarSign size={20} />, value: "£500k+", label: "Revenue Generated" },
+              { icon: <Users size={20} />, value: "50+", label: "Businesses Helped" },
             ].map((m, i) => (
               <AnimatedSection key={m.label} delay={i * 0.1}>
                 <div className="metric-card text-center">
@@ -186,7 +186,7 @@ export default function Results() {
                         className="font-display font-700 text-xs uppercase tracking-widest mb-3"
                         style={{ color: cs.color }}
                       >
-                        Our Solution
+                        The Solution
                       </div>
                       <p className="text-gray-600 text-sm leading-relaxed font-body">{cs.solution}</p>
                     </div>
@@ -228,17 +228,17 @@ export default function Results() {
               className="font-display font-800 text-white mb-4"
               style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)" }}
             >
-              Want Results Like These?
+              Ready to Get Real Results?
             </h2>
             <p className="text-white/60 text-lg mb-8 max-w-lg mx-auto font-body">
-              Book a free strategy call and let's talk about how we can do the same for your business.
+              Let's talk about how we can grow your business with a dedicated marketing approach.
             </p>
             <Link href="/contact">
               <button
                 className="btn-cta font-display font-700 text-base px-8 py-4 rounded-full text-white inline-flex items-center gap-2"
                 style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
               >
-                Get My Free Strategy Session
+                Get in Touch
                 <ArrowRight size={18} />
               </button>
             </Link>

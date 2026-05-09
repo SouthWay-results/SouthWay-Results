@@ -12,61 +12,61 @@ const SERVICES = [
     icon: <Facebook size={32} />,
     title: "Facebook Ads",
     tagline: "Reach Your Ideal Customers",
-    desc: "Reach your ideal customers and boost sales with campaigns optimised for performance. We handle everything from audience research and creative production to A/B testing and daily optimisation.",
+    desc: "Reach your ideal customers and boost sales with campaigns designed for performance. I handle everything from audience research to creative production and daily monitoring.",
     features: [
       "Custom audience targeting",
       "Lookalike audience creation",
-      "Conversion-optimised ad creatives",
-      "Daily campaign monitoring",
-      "Weekly performance reports",
+      "Focused ad creatives",
+      "Regular campaign monitoring",
+      "Performance updates",
     ],
   },
   {
     icon: <Instagram size={32} />,
     title: "Instagram Ads",
     tagline: "Engage & Convert",
-    desc: "Engage your audience with highly-targeted visual campaigns that convert. From Stories to Reels, we create scroll-stopping content that drives real business results.",
+    desc: "Engage your audience with targeted visual campaigns. From Stories to Reels, I create content that aims to drive real business results for your local brand.",
     features: [
       "Story & Reel ad formats",
-      "Visual creative production",
-      "Influencer-style content",
-      "Retargeting campaigns",
-      "Engagement optimisation",
+      "Visual creative support",
+      "Engaging ad content",
+      "Retargeting strategies",
+      "Engagement focus",
     ],
   },
   {
     icon: <Target size={32} />,
     title: "Lead Generation",
     tagline: "Turn Traffic into Customers",
-    desc: "Turn website visitors and social media traffic into real leads for your business. We build and optimise full lead generation funnels — from the first ad impression to the booked appointment.",
+    desc: "Turn website visitors and social media traffic into real leads. I build and manage lead generation funnels designed to help you get more enquiries.",
     features: [
       "Landing page strategy",
-      "Lead magnet creation",
-      "CRM integration",
-      "Follow-up automation",
-      "Cost-per-lead optimisation",
+      "Lead capture focus",
+      "Simple CRM integration",
+      "Follow-up guidance",
+      "Cost-per-lead focus",
     ],
   },
   {
     icon: <Users size={32} />,
     title: "Strategy Consultation",
     tagline: "Your Personal Marketing Blueprint",
-    desc: "Get a personalised marketing strategy tailored to your business goals. Our expert consultants analyse your market, competitors, and current performance to build a roadmap for growth.",
+    desc: "Get a personalised marketing strategy tailored to your business goals. I'll analyse your market and current performance to build a roadmap for your growth.",
     features: [
       "Competitor analysis",
       "Market positioning",
       "Budget allocation strategy",
-      "90-day growth roadmap",
-      "Monthly strategy reviews",
+      "Growth roadmap",
+      "Strategy reviews",
     ],
   },
 ];
 
 const PROCESS = [
-  { step: "01", title: "Discovery Call", desc: "We learn about your business, goals, and current marketing efforts." },
-  { step: "02", title: "Strategy Build", desc: "We create a custom advertising strategy and campaign structure." },
-  { step: "03", title: "Launch & Test", desc: "We launch your campaigns and run rapid A/B tests to find winners." },
-  { step: "04", title: "Scale & Optimise", desc: "We scale what works and continuously optimise for lower costs and higher returns." },
+  { step: "01", title: "Discovery Call", desc: "We discuss your business, goals, and current marketing efforts." },
+  { step: "02", title: "Strategy Build", desc: "I create a custom advertising strategy and campaign structure." },
+  { step: "03", title: "Launch & Test", desc: "I launch your campaigns and test different approaches to find what works." },
+  { step: "04", title: "Scale & Optimise", desc: "I scale the effective parts and continuously optimise for better results." },
 ];
 
 export default function Services() {
@@ -93,7 +93,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            What We Offer
+            What I Offer
           </motion.p>
           <motion.h1
             className="font-display font-800 text-white mb-5"
@@ -102,7 +102,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Our Services
+            My Services
           </motion.h1>
           <motion.p
             className="text-white/60 text-lg max-w-2xl mx-auto font-body"
@@ -110,7 +110,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Comprehensive digital marketing solutions designed to get your local business more leads and sales.
+            Effective digital marketing support designed to get your local business more leads and sales.
           </motion.p>
         </div>
       </section>
@@ -144,7 +144,7 @@ export default function Services() {
                         className="btn-cta font-display font-700 text-sm px-6 py-3 rounded-full text-white inline-flex items-center gap-2"
                         style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
                       >
-                        Request Your Free Strategy Session
+                        Get Started
                         <ArrowRight size={16} />
                       </button>
                     </Link>
@@ -185,7 +185,7 @@ export default function Services() {
               How It Works
             </p>
             <h2 className="font-display font-800 text-white text-3xl">
-              Our Simple 4-Step Process
+              My Simple 4-Step Process
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -211,27 +211,21 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="container text-center">
           <AnimatedSection>
-            <span
-              className="inline-block font-display font-700 text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6"
-              style={{ background: "rgba(245,158,11,0.1)", color: "#F59E0B", border: "1px solid rgba(245,158,11,0.3)" }}
-            >
-              ⚡ Limited Spots Available
-            </span>
             <h2
               className="font-display font-800 mb-4"
               style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#0A1628" }}
             >
-              Start Getting More Leads Today
+              Start Growing Your Business Today
             </h2>
             <p className="text-gray-500 text-lg mb-8 max-w-lg mx-auto font-body">
-              Book a free strategy session and we'll show you exactly how we'd grow your business.
+              Book a free strategy session and we'll discuss how to grow your business.
             </p>
             <Link href="/contact">
               <button
                 className="btn-cta font-display font-700 text-base px-8 py-4 rounded-full text-white inline-flex items-center gap-2"
                 style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
               >
-                Request Your Free Strategy Session
+                Get Started
                 <ArrowRight size={18} />
               </button>
             </Link>

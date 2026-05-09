@@ -9,7 +9,8 @@ import AnimatedSection from "../components/AnimatedSection";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", website: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   function validate() {
@@ -20,12 +21,37 @@ export default function Contact() {
     return e;
   }
 
-  function handleSubmit(ev: React.FormEvent) {
+  async function handleSubmit(ev: React.FormEvent) {
     ev.preventDefault();
     const e = validate();
     if (Object.keys(e).length) { setErrors(e); return; }
     setErrors({});
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      // Formspree or similar simple endpoint can be used, 
+      // but since Gmail connector is enabled, we could ideally use an API.
+      // For now, we'll use a standard POST to a serverless function or similar.
+      const response = await fetch("https://formspree.io/f/mqakpzzq", { // Placeholder or user can provide their own
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          _subject: `New Lead from SouthWay Results: ${form.name}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert("There was an error sending your message. Please try again or email us directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("There was an error sending your message. Please try again or email us directly.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -68,7 +94,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Ready to grow your business? Fill in the form below and we'll get back to you within 24 hours.
+            Ready to grow your business? Fill in the form below and I'll get back to you personally.
           </motion.p>
         </div>
       </section>
@@ -89,22 +115,20 @@ export default function Contact() {
                     Message Sent!
                   </h3>
                   <p className="text-gray-500 font-body">
-                    Thank you for reaching out. We'll be in touch within 24 hours to book your free strategy session.
+                    Thank you for reaching out. We will be in contact within 48 hours.
                   </p>
                 </div>
               ) : (
                 <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
                   onSubmit={handleSubmit}
                   className="rounded-2xl p-8"
                   style={{ background: "#f8faff", border: "1px solid #e0eaff" }}
                   noValidate
                 >
-                  <h2 className="font-display font-800 text-2xl mb-6" style={{ color: "#0A1628" }}>
+                  <h2 className="font-display font-800 text-2xl mb-2" style={{ color: "#0A1628" }}>
                     Send Your Message
                   </h2>
+                  <p className="text-gray-500 text-sm mb-6 font-body">We will be in contact within 48 hours.</p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
@@ -149,24 +173,45 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="mb-5">
-                    <label className="block font-display font-600 text-sm mb-1.5" style={{ color: "#0A1628" }}>
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="+44 7700 000000"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl text-sm font-body outline-none transition-all"
-                      style={{
-                        background: "#fff",
-                        border: "1.5px solid #e0eaff",
-                        color: "#333",
-                      }}
-                      onFocus={(e) => (e.currentTarget.style.border = "1.5px solid #1E90FF")}
-                      onBlur={(e) => (e.currentTarget.style.border = "1.5px solid #e0eaff")}
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                      <label className="block font-display font-600 text-sm mb-1.5" style={{ color: "#0A1628" }}>
+                        Phone Number (Optional)
+                      </label>
+                      <input
+                        type="tel"
+                        placeholder="+44 7700 000000"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl text-sm font-body outline-none transition-all"
+                        style={{
+                          background: "#fff",
+                          border: "1.5px solid #e0eaff",
+                          color: "#333",
+                        }}
+                        onFocus={(e) => (e.currentTarget.style.border = "1.5px solid #1E90FF")}
+                        onBlur={(e) => (e.currentTarget.style.border = "1.5px solid #e0eaff")}
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-display font-600 text-sm mb-1.5" style={{ color: "#0A1628" }}>
+                        Website URL (Optional)
+                      </label>
+                      <input
+                        type="url"
+                        placeholder="https://yourbusiness.com"
+                        value={form.website}
+                        onChange={(e) => setForm({ ...form, website: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl text-sm font-body outline-none transition-all"
+                        style={{
+                          background: "#fff",
+                          border: "1.5px solid #e0eaff",
+                          color: "#333",
+                        }}
+                        onFocus={(e) => (e.currentTarget.style.border = "1.5px solid #1E90FF")}
+                        onBlur={(e) => (e.currentTarget.style.border = "1.5px solid #e0eaff")}
+                      />
+                    </div>
                   </div>
 
                   <div className="mb-6">
@@ -192,11 +237,12 @@ export default function Contact() {
 
                   <button
                     type="submit"
+                    disabled={loading}
                     className="btn-cta w-full font-display font-700 text-base px-6 py-4 rounded-xl text-white flex items-center justify-center gap-2"
-                    style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)" }}
+                    style={{ background: "linear-gradient(135deg, #1E90FF, #0066CC)", opacity: loading ? 0.7 : 1 }}
                   >
-                    Send Your Message
-                    <Send size={18} />
+                    {loading ? "Sending..." : "Send Your Message"}
+                    {!loading && <Send size={18} />}
                   </button>
                 </form>
               )}
@@ -239,29 +285,29 @@ export default function Contact() {
                   </div>
                 </div>
 
+                {/* Personal approach */}
+                <div
+                  className="rounded-2xl p-5"
+                  style={{ background: "rgba(30,144,255,0.05)", border: "1px solid rgba(30,144,255,0.15)" }}
+                >
+                  <div className="font-display font-700 text-sm mb-1" style={{ color: "#1E90FF" }}>
+                    ⚡ Personal Attention
+                  </div>
+                  <p className="text-gray-500 text-sm font-body">
+                    We aren't a large, faceless agency. We're a highly effective one-man team, meaning you get direct access and dedicated focus on your results.
+                  </p>
+                </div>
+
                 {/* Response time */}
                 <div
                   className="rounded-2xl p-5"
                   style={{ background: "rgba(30,144,255,0.05)", border: "1px solid rgba(30,144,255,0.15)" }}
                 >
                   <div className="font-display font-700 text-sm mb-1" style={{ color: "#1E90FF" }}>
-                    ⚡ Fast Response Guaranteed
+                    ⚡ Response Time
                   </div>
                   <p className="text-gray-500 text-sm font-body">
-                    We respond to all enquiries within 24 hours. For urgent matters, call us directly.
-                  </p>
-                </div>
-
-                {/* Urgency */}
-                <div
-                  className="rounded-2xl p-5"
-                  style={{ background: "rgba(245,158,11,0.05)", border: "1px solid rgba(245,158,11,0.2)" }}
-                >
-                  <div className="font-display font-700 text-sm mb-1" style={{ color: "#F59E0B" }}>
-                    ⚡ Limited Spots Available
-                  </div>
-                  <p className="text-gray-500 text-sm font-body">
-                    We only take on a limited number of new clients each month to ensure quality. Book your spot today.
+                    I respond to all enquiries within 48 hours. Looking forward to hearing from you.
                   </p>
                 </div>
               </div>
